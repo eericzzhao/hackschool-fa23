@@ -1,16 +1,27 @@
-// import dotenv
-const dotenv = require('dotenv');
+const express = require ('express');
+const cors = require('cors');
+const config = require('./config');
+const router = require('./routes/gameRoutes');
+const mongoose = require('mongoose');
 
 
-dotenv.config();
+// Create an Express server
+const server = express();
 
-// create a config object with PORT 
-const config = {
-    PORT: process.env.PORT,
-}
+server.use(cors());
+server.use(express.json());
 
+// Mount /api onto our server
+server.use('/api', router);
 
+// Connect to MongoDB database
+mongoose.connect(config.databaseUrl, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true }).then(() => {
+  console.log('Connected to MongoDB database');
+});
 
-
-
-module.exports = config;
+// Start the server
+server.listen(config.PORT, () => {
+    console.log("Server started on PORT " + config.PORT);
+});
