@@ -2,9 +2,25 @@
 
 Welcome to my main repository for ACM Hack's Hack School for Fall 2023!
 
+## Applications and Languages Used
 
+I was taught a mulitude and introduced to: 
 
-## Slides and Resources
+HTML/CSS
+
+JavaScript
+
+MongoDB
+
+Express
+
+React.js
+
+Node.js
+
+Next.js
+
+## ACM Slides and Resources
 
 As the series goes on, we'll add the slides, recordings, and code here!
 
